@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Selection Sort</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="index.html">
+                        Start Bootstrap
+                    </a>
+                </li>
+                <li>
+                    <a href="insertion_sort.html">Insertion Sort</a>
+                </li>
+                <li>
+                    <a href="merge_sort.html">Merge Sort</a>
+                </li>
+                <li>
+                    <a href="selection_sort.html">Selection Sort</a>
+                </li>
+                <li>
+                    <a href="bubble_sort.html">Bubble Sort</a>
+                </li>
+                <li>
+                    <a href="quick_sort.html">Quick Sort</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="acknowledgement.html">Acknowledgement</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Selection Sort</h1>
+                        <br>
+                        <p><b>Selection Sort</b> is a <em>sorting</em> algorithm that sorts the elements of an array in order, by repeatedly finding the minimum element of the unsorted array.</p> 
+                        <p>The algorithm divides the array into two parts, the sorted array which is built from left to right and the remaining unsorted array. The sorted array is initially empty. In each iteration, the minimum element is found from the unsorted array and is put at the end of the sorted array.</p>
+                        <br>
+                        <p>Some of the features of Insertion sort algorithm are as follows:</p>
+                        <ul>
+                            <li>Selection sort is a <b>stable</b> algorithm, which means that it does not change the <b>relative ordering</b> of the elements with equal keys.</li>
+                            <li>Selection sort can do sorting <b>in-place</b> and thus does not require any additional memory space.</li>
+                            <li>Selection sort never makes more than <big>&Omicron;(n)</big> swaps.</li>
+                        </ul>
+                        <div align="center">
+                            <img src="images/selection_sort.gif" class="img-responsive">
+                        </div>
+                        <br>
+                        <br>
+                        <p>The <b>psuedocode</b> for the Selection sort algoritm is as follows:</p>
+                        <br>
+                        <pre><code style="color:red"><b><big>SELECTION-SORT(A) :
+    for j = 0 to (A.length - 2) :
+        index_min = j
+        for i = j + 1 to n - 1 :
+            if A[i] < A[index_min] :
+                index_min = i
+        if index_min != j :
+            swap(A[j], A[index_min])</big></b></code></pre>
+                        <br>
+                        <ul>
+                            <li><b>Worst Case Performance : </b><big>&Omicron;(<em>n<sup>2</sup></em>)</big></li>
+                            <li><b>Best Case Performance : </b><big>&Omicron;(<em>n<sup>2</sup></em>)</big></li>
+                            <li><b>Average Case Performance : </b><big>&Omicron;(<em>n<sup>2</sup></em>)</big></li>
+                            <li><b>Worst Case Space Complexity : </b><big>&Omicron;(<em>n</em>)</big> total, <big>&Omicron;(<em>1</em>)</big> auxillary</li>
+                        </ul>
+                        <br>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>

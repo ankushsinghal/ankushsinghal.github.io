@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Merge Sort</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="index.html">
+                        Start Bootstrap
+                    </a>
+                </li>
+                <li>
+                    <a href="insertion_sort.html">Insertion Sort</a>
+                </li>
+                <li>
+                    <a href="merge_sort.html">Merge Sort</a>
+                </li>
+                <li>
+                    <a href="selection_sort.html">Selection Sort</a>
+                </li>
+                <li>
+                    <a href="bubble_sort.html">Bubble Sort</a>
+                </li>
+                <li>
+                    <a href="quick_sort.html">Quick Sort</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="acknowledgement.html">Acknowledgement</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Merge Sort</h1>
+                        <br>
+                        <p><b>Merge sort</b> is a <em>divide and conquer</em> algorithm which sorts a given array.</p>
+                        <p>Merge sort divides the array into two halves, sorts the two halves recursively using merge sort and then merges the two halvs to form the final sorted array.</p>
+                        <br>
+                        <p>Some of the features of Merge sort algorithm are as follows : </p>
+                        <ul>
+                            <li>Merge sort is a <b>stable</b> algorithm.</li>
+                            <li>Merge sort is <b>not in-place</b>, and thus requires additional memory space to sort the array.</li>
+                        </ul>
+                        <div align="center">
+                            <img src="images/merge_sort.gif" class="img-responsive">
+                        </div>
+                        <p>The <b>psuedocode</b> for Merge sort is as follows : </p>
+                        <br>
+                        <pre><code style="color:red"><b><big>MERGE-SORT(A,p,r) : 
+    if p < r :
+        q = floor((p + r) / 2)
+        MERGE-SORT(A,p,q)
+        MERGE-SORT(A,q+1,r)
+        MERGE(A,p,q,r)</big></b></code></pre>
+                        <br>
+                        <p>The above "MERGE-SORT" function uses a "MERGE" function to merge the arrays. The <b>psuedocode</b> for "MERGE" is as follows : </p>
+                        <br>
+                        <pre><code style="color:red"><b><big>MERGE(A,p,q,r) : 
+    n1 = q - p + 1
+    n2 = r - q
+    let L[0...n1] of length (n1 + 1) and R[0...n2] of length (n2 + 1) be two new arrays
+    for i = 0 to (n1 - 1) :
+        L[i] = A[p + i - 1]
+    for j = 0 to (n2 - 1) :
+        R[j] = A[q + j]
+    L[n1] = &infin;             //Sentinal node
+    R[n2] = &infin;             //Sentinal node
+    i = 0
+    j = 0
+    for k = p to r :
+        if L[i] <= R[j] :
+            A[k] = L[i]
+            i = i + 1
+        else :
+            A[k] = R[j]
+            j = j+1</big></b></code></pre>
+                        <br>
+                        <ul>
+                            <li><b>Worst Case Performance : </b><big>&Omicron;(<em>n</em> log <em>n</em>)</big></li>
+                            <li><b>Best Case Performance : </b><big>&Omicron;(<em>n</em> log <em>n</em>)</big></li>
+                            <li><b>Average Case Performance : </b><big>&Omicron;(<em>n</em> log <em>n</em>)</big></li>
+                            <li><b>Worst Case Space Complexity : </b><big>&Omicron;(<em>n</em>)</big> total, <big>&Omicron;(<em>n</em>)</big> auxillary</li>
+                        </ul>
+                        <br>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>

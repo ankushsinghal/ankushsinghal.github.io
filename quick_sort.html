@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Quick Sort</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="index.html">
+                        Start Bootstrap
+                    </a>
+                </li>
+                <li>
+                    <a href="insertion_sort.html">Insertion Sort</a>
+                </li>
+                <li>
+                    <a href="merge_sort.html">Merge Sort</a>
+                </li>
+                <li>
+                    <a href="selection_sort.html">Selection Sort</a>
+                </li>
+                <li>
+                    <a href="bubble_sort.html">Bubble Sort</a>
+                </li>
+                <li>
+                    <a href="quick_sort.html">Quick Sort</a>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="acknowledgement.html">Acknowledgement</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Quick Sort</h1>
+                        <br>
+                        <p><b>Quick Sort</b> is a <em>sorting</em> algorithm that sorts the elements of an array using <em>divide and conquer</em> strategy.</p> 
+                        <p>Quick sort first picks up an element called <b>pivot</b> from the array, then reorders the array such that all the elements less than pivot come before the pivot in the array and all the larger elements come after the pivot. Finally, it recursively applies the above steps to the subarray of elements of smaller value than the pivot and that of the larger value elements.</p>
+                        <br>
+                        <p>Some of the features of Quick sort algorithm are as follows:</p>
+                        <ul>
+                            <li>Quick sort is <b>not a stable</b> algorithm.</li>
+                            <li>Quick sort can do sorting <b>in-place</b> and thus does not require any additional memory space.</li>
+                        </ul>
+                        <br>
+                        <div align="center">
+                            <img src="images/quick_sort.gif" class="img-responsive">
+                        </div>
+                        <br>
+                        <p>The <b>psuedocode</b> for the Quick sort algoritm is as follows:</p>
+                        <br>
+                        <pre><code style="color:red"><b><big>QUICK-SORT(A, lo, hi) :
+    if lo < hi :
+        p = PARTITION(A, lo, hi)
+        QUICK-SORT(A, lo, p)
+        QUICK-SORT(A, p + 1, hi)</big></b></code></pre>
+                        <br>
+                        <p>Now, there are many ways to find the <b>"partition"</b> element of the array. Two of the most popular partition algorithms are as follows :
+                        <br>
+                        <br>
+                        <b><u><h4>Lomuto Partition Scheme</h4></u></b>
+                        <br>
+                        <p>In this scheme we choose a pivot, which is the <b>last element</b> of the array. The algorithm maintains the index to put pivot in <var>variable i</var> and each time when it finds an element less than or equal to pivot, this index is incremented and that element would be placed before the pivot.</p>
+                        <p>The Lomuto scheme is less efficient than the Hoare's original scheme. This scheme degrades to <b>&Omicron;(<em>n<sup>2</sup></em>)</b> when the array is already sorted as well as when the array has all equal elements.</p>
+                        <p>The psuedocode for <b>Lomuto partition</b> is as follows :</p>
+                        <br>
+                        <pre><code style="color:red"><b><big>PARTITION(A, lo, hi) :
+    pivot = A[hi]
+    i = lo
+    for j = lo to hi - 1 :
+        if A[j] <= pivot :
+            swap A[i] with A[j]
+            i = i + 1
+    swap A[i] with A[hi]
+    return i</big></b></code></pre>
+                        <br>
+                        <br>
+                        <u><h4><b>Hoare Partition Scheme</b></h4></u>
+                        <br>
+                        <p>Hoare's partition scheme uses two indices that start at the ends of the array being partitioned, then move toward each other, until they detect an inversion. The inverted elements are then swapped. When the indices meet, the algorithm stops and returns the final index.</p>
+                        <p>Hoare scheme is more efficient than Lomuto's partition scheme because it does three times fewer swaps on average and creates efficient partitions even when all values are equal. Like Lomuto's partition scheme, Hoare partitioning also causes Quicksort to degrade to <b>&Omicron;(<em>n<sup>2</sup></em>)</b> when the input array is already sorted.</p>
+                        <p>The psuedocode for <b>Hoare partition</b> is as follows :</p>
+                        <br>
+                        <pre><code style="color:red"><b><big>PARTITION(A, lo, hi) :
+    pivot = A[lo]
+    i = lo - 1
+    j = hi + 1
+    while True :
+        do :
+            j = j - 1
+        while A[j] > pivot
+        do :
+            i = i + 1
+        while A[i] < pivot
+        if i < j :
+            swap A[i] with A[j]
+        else :
+            return j</big></b></code></pre>
+                        <br>
+                        <br>
+                        <u><h4><b>Tail Recursive version of QuickSort</b></h4></u>
+                        <br>
+                        <p>The tail recursive version of quicksort uses only <b>&Omicron;(log <em>n</em>)</b> additional space if the in-place version of quicksort is used, as it does not add to the call stack, whereas without tail recursion, it uses <b>&Omicron;(<em>n</em>)</b> additional space due to recursion.</p>
+                        <p>The psuedocode for <b>tail recursive</b> version of quicksort is as follows :</p>
+                        <br>
+                        <pre><code style="color:red"><b><big>QUICK-SORT(A, lo, hi) :
+    while lo < hi :
+        p = partition(A, lo, hi)
+        quicksort(A, lo, p)
+        lo = p + 1</big></b></code></pre>
+                        <br>
+                        <ul>
+                            <li><b>Worst Case Performance : </b><big>&Omicron;(<em>n<sup>2</sup></em>)</big></li>
+                            <li><b>Best Case Performance : </b><big>&Omicron;(<em>n</em> log <em>n</em>)</big></li>
+                            <li><b>Average Case Performance : </b><big>&Omicron;(<em>n</em> log <em>n</em>)</big></li>
+                            <li><b>Worst Case Space Complexity : </b><big>&Omicron;(<em>n</em>)</big> auxillary (naive), <big>&Omicron;(log <em>n</em>)</big> auxillary (Sedgewick)</li>
+                        </ul>
+                        <br>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
