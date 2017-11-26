@@ -17,9 +17,10 @@ document.getElementById("sidebar-wrapper").innerHTML =
     '</li>'+
     '</li>'+
     '<li class="dropdown">'+
-        '<a href="#" class="dropdown-toggle" data-toggle="dropdown">C++ STL<span class="caret"></span></a>'+
+        '<a href="#" class="dropdown-toggle" data-toggle="dropdown">STL Data Structures<span class="caret"></span></a>'+
         '<ul class="dropdown-menu" role="menu">'+
             '<li><a href="vector.html">Vector</a></li>'+
+            '<li><a href="string.html">String</a></li>'+
         '</ul>'+
     '</li>'+
     '<li>'+
