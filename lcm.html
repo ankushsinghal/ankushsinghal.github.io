@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>LCM</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper"></div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>LCM</h1>
+                        <br>
+                        <p>A simple solution is to find all prime factors of both numbers, then find union of all factors present in both numbers. Finally return product of elements in union.
+
+An efficient solution is based on below formula for LCM of two numbers ‘a’ and ‘b’.</p> 
+                        <br>
+                        <pre><b><big>   a x b = LCM(a, b) * GCD (a, b)
+
+   LCM(a, b) = (a x b) / GCD(a, b) </big></b></pre>
+                        <br>
+                        
+                        <p>We know,</p>
+
+                        <div align="left">
+                            <img src="images/lcm1.png" class="img-responsive">
+                        </div>
+                        <br>
+                        <p>The above relation only holds for two numbers,</p>
+
+                        <div align="left">
+                            <img src="images/lcm2.png" class="img-responsive">
+                        </div>
+
+                        <br>
+                        <p>The idea here is to extend our relation for more than 2 numbers. Let’s say we have an array arr[] that contains n elements whose LCM needed to be calculated.</p>
+
+                        <br>
+
+                        <p>The main steps of our algorithm are:</p>
+
+                        <br>
+
+                        <ol>
+                            <li>Initialize ans = arr[0]</li>
+                            <li>Iterate over all the elements of the array i.e. from i = 1 to i = n-1
+At the ith iteration ans = LCM(arr[0], arr[1], …….., arr[i-1]). This can be done easily as <b>LCM(arr[0], arr[1], …., arr[i]) = LCM(ans, arr[i])</b>. Thus at i’th iteration we just have to do <b>ans = LCM(ans, arr[i]) = ans x arr[i] / gcd(ans, arr[i])</b></li>
+                        </ol>
+                        <br>
+                        
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script for adding common sidebar to  all files -->
+    <script src="js/script.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>

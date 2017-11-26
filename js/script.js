@@ -23,6 +23,12 @@ document.getElementById("sidebar-wrapper").innerHTML =
         '</ul>'+
     '</li>'+
     '<li>'+
+        '<a href="gcd.html">GCD</a>'+
+    '</li>'+
+    '<li>'+
+        '<a href="lcm.html">LCM</a>'+
+    '</li>'+
+    '<li>'+
         '<a href="acknowledgement.html">Acknowledgement</a>'+
     '</li>'+
 '</ul>';

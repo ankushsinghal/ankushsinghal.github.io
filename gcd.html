@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>GCD</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/simple-sidebar.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper"></div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>GCD</h1>
+                        <br>
+                        <p>An efficient solution is to use Euclidean algorithm which is the main algorithm used for this purpose. The idea is, GCD of two numbers doesn’t change if smaller number is subtracted from a bigger number. The same is the case with modulo opertion. The gcd algorithm with modulo operation is faster</p> 
+                        <br>
+                        <pre><code style="color:red"><b><big>#include &lt;stdio.h&gt;
+ 
+// Recursive function to return gcd of a and b
+int gcd_subtraction(int a, int b)
+{
+    // Everything divides 0 
+    if (a == 0 || b == 0)
+       return 0;
+ 
+    // base case
+    if (a == b)
+        return a;
+ 
+    // a is greater
+    if (a > b)
+        return gcd(a-b, b);
+    return gcd(a, b-a);
+}
+
+int gcd_modulo(int a, int b){
+    if (a == 0){
+        return b;
+    }
+    else if (b == 0){
+        return a;
+    }
+    else{
+        if (a > b){
+            return gcd(a % b, b);
+        }
+        else{
+            return gcd(b % a, a);
+        }
+    }
+}
+ 
+// Driver program to test above function
+int main()
+{
+    int a = 98, b = 56;
+    printf("GCD of %d and %d is %d ", a, b, gcd_modulo(a, b));
+    return 0;
+}</big></b></code></pre>
+                        <br>
+                        <p><b>Output :</b><p>
+                        <pre><b><big>GCD of 98 and 56 is 14</big></b></pre>
+                        <br>
+
+                        <p>
+                            The GCD of three or more numbers equals the product of the prime factors common to all the numbers, but it can also be calculated by repeatedly taking the GCDs of pairs of numbers.
+                        </p> 
+                        <br>
+                        <pre><b><big>gcd(a, b, c) = gcd(a, gcd(b, c)) 
+             = gcd(gcd(a, b), c) 
+             = gcd(gcd(a, c), b)</big></b></pre>
+                        <br>
+
+                        <p>
+                            For an array of elements, we do following.
+                        </p> 
+                        <br>
+                        <pre><b><big>result = arr[0]
+For i = 1 to n-1
+   result = GCD(result, arr[i]<big></b></pre>
+                        <br>
+                        
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script for adding common sidebar to  all files -->
+    <script src="js/script.js"></script>
+
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+</body>
+
+</html>
