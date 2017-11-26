@@ -13,7 +13,14 @@ document.getElementById("sidebar-wrapper").innerHTML =
             '<li><a href="selection_sort.html">Selection Sort</a></li>'+
             '<li><a href="bubble_sort.html">Bubble Sort</a></li>'+
             '<li><a href="quick_sort.html">Quick Sort</a></li>'+
-      '</ul>'+
+        '</ul>'+
+    '</li>'+
+    '</li>'+
+    '<li class="dropdown">'+
+        '<a href="#" class="dropdown-toggle" data-toggle="dropdown">C++ STL<span class="caret"></span></a>'+
+        '<ul class="dropdown-menu" role="menu">'+
+            '<li><a href="vector.html">Vector</a></li>'+
+        '</ul>'+
     '</li>'+
     '<li>'+
         '<a href="acknowledgement.html">Acknowledgement</a>'+
