@@ -24,6 +24,9 @@ document.getElementById("sidebar-wrapper").innerHTML =
         '</ul>'+
     '</li>'+
     '<li>'+
+        '<a href="stdio.html">STD I/O</a>'+
+    '</li>'+
+    '<li>'+
         '<a href="gcd.html">GCD</a>'+
     '</li>'+
     '<li>'+
