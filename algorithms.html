@@ -48,6 +48,17 @@ sort(arr, arr+n, greater<int>());
 sort (myvector.begin(), myvector.begin()+4);</big></b></code></pre>
 
                         <br>
+
+                        <p>To find an element inside a vector we use the std::find function</p>
+                        <br>
+                        <pre><code style="color:red"><b><big>#include &lt;algorithm&gt;
+
+if ( std::find(vector.begin(), vector.end(), item) != vector.end() )
+   do_this();    # item found
+else
+   do_that();</big></b></code></pre>
+
+                        <br>
                         
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
                     </div>
