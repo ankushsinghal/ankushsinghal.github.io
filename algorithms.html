@@ -49,7 +49,7 @@ sort (myvector.begin(), myvector.begin()+4);</big></b></code></pre>
 
                         <br>
 
-                        <p>To find an element inside a vector we use the std::find function</p>
+                        <p>To find an element inside a vector we use the <b>std::find</b> function</p>
                         <br>
                         <pre><code style="color:red"><b><big>#include &lt;algorithm&gt;
 
@@ -58,6 +58,20 @@ if ( std::find(vector.begin(), vector.end(), item) != vector.end() )
 else
    do_that();</big></b></code></pre>
 
+                        <br>
+
+                        <p>To find the minimum and maximum elements inside a vector or an array we use the <b>std::min_element</b> and <b>std::max_element</b> functions</p>
+                        <br>
+                        <pre><code style="color:red"><b><big>int myints[] = {3,7,2,5,6,4,9};
+
+std::cout << "The smallest element is " << *std::min_element(myints,myints+7) << '\n';
+std::cout << "The largest element is "  << *std::max_element(myints,myints+7) << '\n';</big></b></code></pre>
+
+                        <br>
+                        
+                        <p><b>Output :</b><p>
+                        <pre><b><big>The smallest element is 2
+The largest element is 9</big></b></pre>
                         <br>
                         
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
