@@ -16,6 +16,14 @@ document.getElementById("sidebar-wrapper").innerHTML =
         '</ul>'+
     '</li>'+
     '</li>'+
+    '</li>'+
+    '<li class="dropdown">'+
+        '<a href="#" class="dropdown-toggle" data-toggle="dropdown">Non STL Data Structures<span class="caret"></span></a>'+
+        '<ul class="dropdown-menu" role="menu">'+
+            '<li><a href="stack_non_stl.html">Stack</a></li>'+
+            '<li><a href="queue_non_stl.html">Queue</a></li>'+
+        '</ul>'+
+    '</li>'+
     '<li class="dropdown">'+
         '<a href="#" class="dropdown-toggle" data-toggle="dropdown">STL Data Structures<span class="caret"></span></a>'+
         '<ul class="dropdown-menu" role="menu">'+
