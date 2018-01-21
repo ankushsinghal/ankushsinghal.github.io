@@ -22,6 +22,7 @@ document.getElementById("sidebar-wrapper").innerHTML =
         '<ul class="dropdown-menu" role="menu">'+
             '<li><a href="stack_non_stl.html">Stack</a></li>'+
             '<li><a href="queue_non_stl.html">Queue</a></li>'+
+            '<li><a href="graph_non_stl.html">Graph</a></li>'+
         '</ul>'+
     '</li>'+
     '<li class="dropdown">'+
