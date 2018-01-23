@@ -47,6 +47,16 @@
 getline(cin, messageVar);</big></b></code></pre>
 
                         <br>
+
+                        <p>For taking input from a file instead of from the terminal using "cin" we can use ifstream as follows:</p>
+                        <br>
+                        <pre><code style="color:red"><b><big>int x;
+ifstream myfile;
+myfile.open("input.txt");
+myfile >> x;
+myfile.close();</big></b></code></pre>
+
+                        <br>
                         
                         <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
                     </div>

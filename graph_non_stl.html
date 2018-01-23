@@ -52,6 +52,7 @@ AdjListNode *newAdjNode(int des){
     AdjListNode *newNode = (AdjListNode *)malloc(sizeof(AdjListNode));
     newNode->dest = des;
     newNode->next = NULL;
+    return newNode;
 }
 
 typedef struct AdjList{
@@ -67,9 +68,7 @@ public:
         arr = (AdjList *)malloc(sizeof(AdjList) * V);
         for(int i = 0; i < V; i++){
             arr[i].head = NULL;
-            cout << arr[i].head << " ";
         }
-        cout << endl;
     }
     void AddEdge(int src, int dest){
         AdjListNode *newNode = newAdjNode(dest);
